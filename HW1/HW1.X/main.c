@@ -2,7 +2,7 @@
 #include<sys/attribs.h>  // __ISR macro
 
 // DEVCFG0
-#pragma config DEBUG = 1x // no debugging
+#pragma config DEBUG = 0x1 // no debugging
 #pragma config JTAGEN = 0 // no jtag
 #pragma config ICESEL = 11 // use PGED1 and PGEC1
 #pragma config PWP = 111111111 // no write protect
@@ -16,7 +16,7 @@
 #pragma config POSCMOD = 10 // high speed crystal mode
 #pragma config OSCIOFNC = 1 // free up secondary osc pins
 #pragma config FPBDIV = 00 // divide CPU freq by 1 for peripheral bus clock
-#pragma config FCKSM = 1x // do not enable clock switch
+#pragma config FCKSM = 0x1 // do not enable clock switch
 #pragma config WDTPS = 00000 // slowest wdt
 #pragma config WINDIS = 1 // no wdt window
 #pragma config FWDTEN = 0 // wdt off by default
@@ -30,7 +30,7 @@
 #pragma config UPLLEN = 0 // USB clock on
 
 // DEVCFG3
-#pragma config USERID = karl // some 16bit userid, doesn't matter what
+#pragma config USERID = 0xbebe // some 16bit userid, doesn't matter what
 #pragma config PMDL1WAY = 0 // allow multiple reconfigurations
 #pragma config IOL1WAY = 0 // allow multiple reconfigurations
 #pragma config FUSBIDIO = 1 // USB pins controlled by USB module
