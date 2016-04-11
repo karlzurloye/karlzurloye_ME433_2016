@@ -14906,6 +14906,20 @@ Used on FTDI breakouts</description>
 <text x="3.175" y="0.635" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="3.175" y="-1.27" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
+<package name="SLIDE-SWITCH">
+<wire x1="-4.58" y1="2.54" x2="4.58" y2="2.54" width="0.127" layer="21"/>
+<wire x1="4.58" y1="2.54" x2="4.58" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="4.58" y1="-2.54" x2="-4.58" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="-4.58" y1="-2.54" x2="-4.58" y2="2.54" width="0.127" layer="21"/>
+<pad name="P$1" x="0" y="0" drill="0.8"/>
+<pad name="P$3" x="2" y="0" drill="0.8"/>
+<pad name="P$2" x="-2" y="0" drill="0.8"/>
+<wire x1="2" y1="-5.5" x2="-2" y2="-5.5" width="0.127" layer="21"/>
+<wire x1="-2" y1="-2.5" x2="-2" y2="-5.5" width="0.127" layer="21"/>
+<wire x1="2" y1="-2.5" x2="2" y2="-5.5" width="0.127" layer="21"/>
+<pad name="P$4" x="-4" y="0" drill="1"/>
+<pad name="P$5" x="4" y="0" drill="1"/>
+</package>
 </packages>
 <symbols>
 <symbol name="R-US">
@@ -15407,6 +15421,28 @@ Used on FTDI breakouts</description>
 <wire x1="-15.24" y1="-35.56" x2="15.24" y2="-35.56" width="0.254" layer="94"/>
 <wire x1="15.24" y1="-35.56" x2="15.24" y2="40.64" width="0.254" layer="94"/>
 <wire x1="15.24" y1="40.64" x2="-15.24" y2="40.64" width="0.254" layer="94"/>
+</symbol>
+<symbol name="SLIDE-SWITCH">
+<pin name="2.L" x="-17.78" y="0" length="middle"/>
+<pin name="3.R" x="17.78" y="0" length="middle" rot="R180"/>
+<pin name="1.5V" x="0" y="-17.78" length="middle" rot="R90"/>
+<text x="-12.7" y="2.54" size="1.778" layer="94">&gt;NAME</text>
+<text x="2.54" y="2.54" size="1.778" layer="94">&gt;VALUE</text>
+<wire x1="-15.24" y1="5.08" x2="-15.24" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="-15.24" y1="-15.24" x2="15.24" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-15.24" x2="15.24" y2="5.08" width="0.254" layer="94"/>
+<wire x1="15.24" y1="5.08" x2="-15.24" y2="5.08" width="0.254" layer="94"/>
+</symbol>
+<symbol name="RESONATOR">
+<pin name="2.GND" x="0" y="-5.08" length="middle" rot="R90"/>
+<pin name="3.R" x="5.08" y="-5.08" length="middle" rot="R90"/>
+<pin name="1.L" x="-5.08" y="-5.08" length="middle" rot="R90"/>
+<text x="-5.08" y="-10.16" size="1.778" layer="94">&gt;NAME</text>
+<text x="-5.08" y="-12.7" size="1.778" layer="94">&gt;VALUE</text>
+<wire x1="-7.62" y1="-2.54" x2="7.62" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-2.54" x2="7.62" y2="2.54" width="0.254" layer="94"/>
+<wire x1="7.62" y1="2.54" x2="-7.62" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="2.54" x2="-7.62" y2="-2.54" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -21357,6 +21393,65 @@ Standard 15-pin 0.1" header. Use with straight break away headers (SKU : PRT-001
 <connect gate="G$1" pin="1.GND" pad="1"/>
 <connect gate="G$1" pin="2.VIN" pad="2"/>
 <connect gate="G$1" pin="3.VOUT" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PIC32MX250F128B">
+<gates>
+<gate name="G$1" symbol="PIC32MX250F128B" x="0" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="DIL28-3">
+<connects>
+<connect gate="G$1" pin="1.MCLR" pad="1"/>
+<connect gate="G$1" pin="10.OSC2" pad="10"/>
+<connect gate="G$1" pin="11.RB4" pad="11"/>
+<connect gate="G$1" pin="12.RA4" pad="12"/>
+<connect gate="G$1" pin="13.GND" pad="13"/>
+<connect gate="G$1" pin="14.USBID" pad="14"/>
+<connect gate="G$1" pin="15.5V" pad="15"/>
+<connect gate="G$1" pin="16." pad="16"/>
+<connect gate="G$1" pin="17." pad="17"/>
+<connect gate="G$1" pin="18." pad="18"/>
+<connect gate="G$1" pin="19.GND" pad="19"/>
+<connect gate="G$1" pin="2." pad="2"/>
+<connect gate="G$1" pin="20.10UF" pad="20"/>
+<connect gate="G$1" pin="21.D+" pad="21"/>
+<connect gate="G$1" pin="22.D-" pad="22"/>
+<connect gate="G$1" pin="23.3.3V" pad="23"/>
+<connect gate="G$1" pin="24." pad="24"/>
+<connect gate="G$1" pin="25." pad="25"/>
+<connect gate="G$1" pin="26." pad="26"/>
+<connect gate="G$1" pin="27.GND" pad="27"/>
+<connect gate="G$1" pin="28.3.3V" pad="28"/>
+<connect gate="G$1" pin="3." pad="3"/>
+<connect gate="G$1" pin="4.PGED1" pad="4"/>
+<connect gate="G$1" pin="5.PGEC1" pad="5"/>
+<connect gate="G$1" pin="6." pad="6"/>
+<connect gate="G$1" pin="7." pad="7"/>
+<connect gate="G$1" pin="8.3.3V" pad="8"/>
+<connect gate="G$1" pin="9.OSC1" pad="9"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SLIDE-SWITCH">
+<gates>
+<gate name="G$1" symbol="SLIDE-SWITCH" x="0" y="5.08"/>
+</gates>
+<devices>
+<device name="" package="SLIDE-SWITCH">
+<connects>
+<connect gate="G$1" pin="1.5V" pad="P$1"/>
+<connect gate="G$1" pin="2.L" pad="P$2"/>
+<connect gate="G$1" pin="3.R" pad="P$3"/>
 </connects>
 <technologies>
 <technology name=""/>
