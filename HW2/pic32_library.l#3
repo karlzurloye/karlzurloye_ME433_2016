@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -15401,7 +15401,7 @@ Used on FTDI breakouts</description>
 <symbol name="PIC32MX250F128B">
 <pin name="7." x="-17.78" y="2.54" length="middle"/>
 <pin name="6." x="-17.78" y="7.62" length="middle"/>
-<pin name="8.3.3V" x="-17.78" y="-2.54" length="middle"/>
+<pin name="8.GND" x="-17.78" y="-2.54" length="middle"/>
 <pin name="5.PGEC1" x="-17.78" y="12.7" length="middle"/>
 <pin name="4.PGED1" x="-17.78" y="17.78" length="middle"/>
 <pin name="3." x="-17.78" y="22.86" length="middle"/>
@@ -15411,7 +15411,7 @@ Used on FTDI breakouts</description>
 <pin name="10.OSC2" x="-17.78" y="-12.7" length="middle"/>
 <pin name="11.RB4" x="-17.78" y="-17.78" length="middle"/>
 <pin name="12.RA4" x="-17.78" y="-22.86" length="middle"/>
-<pin name="13.GND" x="-17.78" y="-27.94" length="middle"/>
+<pin name="13.3.3V" x="-17.78" y="-27.94" length="middle"/>
 <pin name="14.USBID" x="-17.78" y="-33.02" length="middle"/>
 <pin name="22.D-" x="17.78" y="2.54" length="middle" rot="R180"/>
 <pin name="21.D+" x="17.78" y="-2.54" length="middle" rot="R180"/>
@@ -21437,7 +21437,7 @@ Standard 15-pin 0.1" header. Use with straight break away headers (SKU : PRT-001
 <connect gate="G$1" pin="10.OSC2" pad="10"/>
 <connect gate="G$1" pin="11.RB4" pad="11"/>
 <connect gate="G$1" pin="12.RA4" pad="12"/>
-<connect gate="G$1" pin="13.GND" pad="13"/>
+<connect gate="G$1" pin="13.3.3V" pad="13"/>
 <connect gate="G$1" pin="14.USBID" pad="14"/>
 <connect gate="G$1" pin="15.5V" pad="15"/>
 <connect gate="G$1" pin="16." pad="16"/>
@@ -21459,7 +21459,7 @@ Standard 15-pin 0.1" header. Use with straight break away headers (SKU : PRT-001
 <connect gate="G$1" pin="5.PGEC1" pad="5"/>
 <connect gate="G$1" pin="6." pad="6"/>
 <connect gate="G$1" pin="7." pad="7"/>
-<connect gate="G$1" pin="8.3.3V" pad="8"/>
+<connect gate="G$1" pin="8.GND" pad="8"/>
 <connect gate="G$1" pin="9.OSC1" pad="9"/>
 </connects>
 <technologies>

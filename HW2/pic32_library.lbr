@@ -18638,10 +18638,11 @@ Source: www.kingbright.com</description>
 </device>
 <device name="-MB-H" package="USB-MB-H">
 <connects>
-<connect gate="G$1" pin="2.ID" pad="GND"/>
-<connect gate="G$1" pin="3.D+" pad="VBUS"/>
+<connect gate="G$1" pin="1.GND" pad="GND"/>
+<connect gate="G$1" pin="2.ID" pad="ID"/>
+<connect gate="G$1" pin="3.D+" pad="D+"/>
 <connect gate="G$1" pin="4.D-" pad="D-"/>
-<connect gate="G$1" pin="5.VBUS" pad="D+"/>
+<connect gate="G$1" pin="5.VBUS" pad="VBUS"/>
 </connects>
 <technologies>
 <technology name=""/>

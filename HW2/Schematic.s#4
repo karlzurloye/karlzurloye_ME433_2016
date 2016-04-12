@@ -12370,7 +12370,6 @@ Standard 8-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <part name="C5" library="pic32_library" deviceset="CPOL-US" device="E2.5-5" value="0.1uF"/>
 <part name="C6" library="pic32_library" deviceset="CPOL-US" device="E2.5-5" value="0.1uF"/>
 <part name="+3V6" library="pic32_library" deviceset="+3V3" device=""/>
-<part name="+3V7" library="pic32_library" deviceset="+3V3" device=""/>
 <part name="U$4" library="pic32_library" deviceset="PUSH_BUTTON" device=""/>
 <part name="GND9" library="pic32_library" deviceset="GND" device=""/>
 <part name="C7" library="pic32_library" deviceset="CPOL-US" device="E2.5-5" value="0.1uF"/>
@@ -12419,7 +12418,6 @@ Standard 8-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <instance part="C5" gate="G$1" x="106.68" y="60.96" rot="R180"/>
 <instance part="C6" gate="G$1" x="119.38" y="30.48" rot="R270"/>
 <instance part="+3V6" gate="G$1" x="129.54" y="30.48" rot="R270"/>
-<instance part="+3V7" gate="G$1" x="20.32" y="25.4" rot="R90"/>
 <instance part="U$4" gate="G$1" x="-5.08" y="25.4"/>
 <instance part="GND9" gate="1" x="-27.94" y="25.4" rot="R270"/>
 <instance part="C7" gate="G$1" x="48.26" y="5.08" rot="R270"/>
@@ -12432,7 +12430,7 @@ Standard 8-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <instance part="U$6" gate="G$1" x="30.48" y="-15.24"/>
 <instance part="GND3" gate="1" x="53.34" y="-15.24" rot="R90"/>
 <instance part="R2" gate="G$1" x="5.08" y="-15.24"/>
-<instance part="+3V9" gate="G$1" x="-5.08" y="-15.24" rot="R90"/>
+<instance part="+3V9" gate="G$1" x="-7.62" y="-15.24" rot="R90"/>
 <instance part="J4" gate="G$1" x="71.12" y="-12.7"/>
 <instance part="J5" gate="G$1" x="116.84" y="0"/>
 </instances>
@@ -12474,10 +12472,8 @@ Standard 8-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 </segment>
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
-<pinref part="+3V7" gate="G$1" pin="+3V3"/>
 <wire x1="25.4" y1="25.4" x2="22.86" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="+3V3" gate="G$1" pin="+3V3"/>
-<junction x="22.86" y="25.4"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="13.GND"/>
@@ -12495,13 +12491,14 @@ Standard 8-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <label x="7.62" y="-5.08" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="+3V9" gate="G$1" pin="+3V3"/>
-<wire x1="-2.54" y1="-15.24" x2="2.54" y2="-15.24" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="J4" gate="G$1" pin="2"/>
 <wire x1="76.2" y1="-17.78" x2="78.74" y2="-17.78" width="0.1524" layer="91"/>
 <label x="78.74" y="-17.78" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="+3V9" gate="G$1" pin="+3V3"/>
+<pinref part="R2" gate="G$1" pin="1"/>
+<wire x1="-5.08" y1="-15.24" x2="0" y2="-15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">

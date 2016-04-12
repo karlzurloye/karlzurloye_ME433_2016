@@ -14920,6 +14920,10 @@ Used on FTDI breakouts</description>
 <pad name="P$4" x="-4" y="0" drill="1"/>
 <pad name="P$5" x="4" y="0" drill="1"/>
 </package>
+<package name="PUSH_BUTTON">
+<pad name="P$2" x="2.54" y="0" drill="0.8" rot="R90"/>
+<pad name="P$3" x="-2.54" y="0" drill="0.8" rot="R90"/>
+</package>
 </packages>
 <symbols>
 <symbol name="R-US">
