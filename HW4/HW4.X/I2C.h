@@ -1,8 +1,6 @@
 #ifndef I2C_H
 #define I2C_H
 
-#define I2C_ADDR 0x0
-
 void initI2C();
 void i2c_master_setup(void);             
 void i2c_master_start(void);             

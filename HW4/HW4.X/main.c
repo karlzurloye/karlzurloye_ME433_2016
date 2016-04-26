@@ -88,13 +88,11 @@ int main() {
             Voutb = 0; // reset at end of triangle
         }
         
-        char userButton = getExpander();
-        if((userButton & 0x80) >> 7 == 0) // Button is pressed
+        char button = getExpander();
+        if((button & 0x80) >> 7 != 0) // user pressing button
         {
             setExpander(0, 1);
-        }
-        else
-        {
+        } else {
             setExpander(0, 0);
         }
        

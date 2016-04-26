@@ -54,7 +54,7 @@ void initExpander()
     i2c_master_start();
     unsigned char devop = 0b01000000;
     i2c_master_send(devop);
-    unsigned char reg = 0b00000000; //IODIR
+    unsigned char reg = 0b00000000;
     i2c_master_send(reg);
     unsigned char value = 0b11110000;
     i2c_master_send(value);
