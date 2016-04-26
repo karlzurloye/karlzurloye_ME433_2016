@@ -1,7 +1,7 @@
 #include<xc.h>           // processor SFR definitions
 #include<sys/attribs.h>  // __ISR macro
 #include "SPI.h"
-//#include "I2C.h"
+#include "I2C.h"
 #include <math.h>
 
 // DEVCFG0
@@ -64,6 +64,8 @@ int main() {
     __builtin_enable_interrupts();
     
     initSPI1(); // initialize spi
+    initI2C(); // initialize i2c
+    initExpander; // initialize I/O expander
     
     double Vouta = 128; // sin wave 10 Hz
     double Voutb = 0; // triangle wave 5 Hz
@@ -84,6 +86,16 @@ int main() {
         Voutb = Voutb + 1.28; // (256/200) time steps
         if(Voutb > 256) {
             Voutb = 0; // reset at end of triangle
+        }
+        
+        char userButton = getExpander();
+        if((userButton & 0x80) >> 7 == 0) // Button is pressed
+        {
+            setExpander(0, 1);
+        }
+        else
+        {
+            setExpander(0, 0);
         }
        
     }
