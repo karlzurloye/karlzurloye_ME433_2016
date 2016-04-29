@@ -67,8 +67,8 @@ int main() {
     RPB9Rbits.RPB9R = 0b0101; 
     RPB15Rbits.RPB15R = 0b0101; // OC1
     RPB8Rbits.RPB8R = 0b0101; // OC2
-    T2CONbits.TCKPS = 0b000;
-	PR2 = 9599; 
+    T2CONbits.TCKPS = 0b100;
+	PR2 = 6000; 
 	TMR2 = 0; 
     OC1CONbits.OCM = 0b110;
 	OC1CONbits.OC32 = 0; 
@@ -87,8 +87,16 @@ int main() {
     initI2C(); // initialize i2c
     initIMU(); // initialize IMU
     
-    char data[14]; 
-    short short_data[7];
+    static unsigned char data[14]; 
+    static short short_data[7];
+    
+    int i=0;
+    for(i=0; i<14; i++) {
+        data[i] = 0x00;
+    }
+    for(i=0; i<7; i++) {
+        short_data[i] = 0x0000;
+    }
     
     while(1) {
         
@@ -101,17 +109,9 @@ int main() {
         for(i=0; i<7; i++) {
             short_data[i] = (data[2*i+1] << 8 | data[2*i]);
         }
-        OC1RS = (int)((((float)short_data[4]*2 + 32767.0)/65535.0)*(9600));
-        OC2RS = (int)((((float)short_data[5]*2 + 32767.0)/65535.0)*(9600)); 
+        OC1RS = (int)((((float)short_data[4]*2 + 32767.0)/65535.0)*(6000));
+        OC2RS = (int)((((float)short_data[5]*2 + 32767.0)/65535.0)*(6000)); 
        
     }
     
 }
-
-//    for(int i=0; i<14; i++) {
-//         data[i] = 0x00;
-//    }
-// 
-//    for(int i=0; i<7; i++) {
-//        short_data[i] = 0x0000;
-//    }
