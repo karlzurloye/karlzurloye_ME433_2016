@@ -1,7 +1,7 @@
 #include<xc.h>           // processor SFR definitions
 #include<sys/attribs.h>  // __ISR macro
 #include "IMU.h"
-#include "I2C.h"
+#include "I2C_1.h"
 #include "LCD.h"
 #include <math.h>
 
@@ -66,43 +66,67 @@ int main() {
     
     SPI1_init();
     LCD_init();
+    initIMU();
+    initI2C();
     
-//    static unsigned char data[14]; 
-//    static short short_data[7];
-//    
-//    int i=0;
-//    for(i=0; i<14; i++) {
-//        data[i] = 0x00;
-//    }
-//    for(i=0; i<7; i++) {
-//        short_data[i] = 0x0000;
-//    }
+    static unsigned char data[14]; 
+    static short short_data[7];
     
-    while(1) {
-        
-//        _CP0_SET_COUNT(0);  // set system clock to zero
-//        while(_CP0_GET_COUNT() < 24000) { // wait 1ms
-//        ; }
-//        
-//        readIMU(0b00100000, data, 14);
-//        int i;
-//        for(i=0; i<7; i++) {
-//            short_data[i] = (data[2*i+1] << 8 | data[2*i]);
-//        }
-//        OC1RS = (int)((((float)short_data[4]*2 + 32767.0)/65535.0)*(6000));
-//        OC2RS = (int)((((float)short_data[5]*2 + 32767.0)/65535.0)*(6000)); 
-        
-        LCD_clearScreen(GREEN);
-        
-        char string[25];
-        int num = 1337;
-        sprintf(string, "Hello World %d!", num);
-        LCD_drawString(28,32,string);
-        
-        _CP0_SET_COUNT(0);  // set system clock to zero
-        while(_CP0_GET_COUNT() < 24000*10000) { // wait 10s
-        ; }
-       
+    int i=0;
+    for(i=0; i<14; i++) {
+        data[i] = 0x00;
+    }
+    for(i=0; i<7; i++) {
+        short_data[i] = 0x0000;
     }
     
+    LCD_clearScreen(GREEN);
+
+    while(1) {
+        
+        _CP0_SET_COUNT(0);  // set system clock to zero
+        while(_CP0_GET_COUNT() < 24000*250) { // wait 250ms
+        ; }
+        
+        readIMU(0b00100000, data, 14);
+        int i;
+        for(i=0; i<7; i++) {
+            short_data[i] = (data[2*i+1] << 8 | data[2*i]);
+        }
+        
+        char string[25];
+//        int num = 1337;
+//        sprintf(string, "Hello World %d!", num);
+//        LCD_drawString(28,32,string);
+        
+        float data = ((float)short_data[0]*4)/65535.0;
+        sprintf(string, "Temp: %5.3f", data+70.6455);
+        LCD_drawString(14,16,string);
+        
+        data = ((float)short_data[1]*4)/65535.0;
+        sprintf(string, "Gyro X: %5.3f", data);
+        LCD_drawString(14,26,string);
+        
+        data = ((float)short_data[2]*4)/65535.0;
+        sprintf(string, "Gyro Y: %5.3f", data);
+        LCD_drawString(14,36,string);
+        
+        data = ((float)short_data[3]*4)/65535.0;
+        sprintf(string, "Gyro Z: %5.3f", data);
+        LCD_drawString(14,46,string);
+        
+        data = ((float)short_data[4]*4)/65535.0;
+        sprintf(string, "Accl X: %5.3f", data);
+        LCD_drawString(14,56,string);
+        
+        data = ((float)short_data[5]*4)/65535.0;
+        sprintf(string, "Accl Y: %5.3f", data);
+        LCD_drawString(14,66,string);
+        
+        data = ((float)short_data[6]*4)/65535.0;
+        sprintf(string, "Accl Z: %5.3f", data);
+        LCD_drawString(14,76,string);
+        
+    }
+       
 }

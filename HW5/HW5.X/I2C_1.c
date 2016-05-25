@@ -1,4 +1,4 @@
-#include "I2C.h"
+#include "I2C_1.h"
 #include <proc/p32mx250f128b.h>
 
 void initI2C(void) {

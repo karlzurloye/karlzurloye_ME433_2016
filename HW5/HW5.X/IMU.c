@@ -1,5 +1,5 @@
 #include "IMU.h"
-#include "I2C.h"
+#include "I2C_1.h"
 
 unsigned char chip = 0b1101011;
 
