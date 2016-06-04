@@ -67,7 +67,7 @@ int main() {
             LATAbits.LATA4 = 0;
         }
         
-        if(_CP0_GET_COUNT() > 12000) {
+        if(_CP0_GET_COUNT() > 12000*2000) { //1 sec toggle
             LATAbits.LATA4 = !LATAbits.LATA4;
             _CP0_SET_COUNT(0);
         }
